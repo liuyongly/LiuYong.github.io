@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://http://liuyong.github.io/</id>
+    <id>https://liuyong.github.io</id>
     <title>Gridea</title>
-    <updated>2020-05-25T03:27:06.136Z</updated>
+    <updated>2020-05-25T03:29:34.550Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://http://liuyong.github.io/"/>
-    <link rel="self" href="https://http://liuyong.github.io/atom.xml"/>
+    <link rel="alternate" href="https://liuyong.github.io"/>
+    <link rel="self" href="https://liuyong.github.io/atom.xml"/>
     <subtitle>温故而知新</subtitle>
-    <logo>https://http://liuyong.github.io/images/avatar.png</logo>
-    <icon>https://http://liuyong.github.io/favicon.ico</icon>
+    <logo>https://liuyong.github.io/images/avatar.png</logo>
+    <icon>https://liuyong.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Gridea</rights>
     <entry>
         <title type="html"><![CDATA[模块化]]></title>
-        <id>https://http://liuyong.github.io/post/mo-kuai-hua/</id>
-        <link href="https://http://liuyong.github.io/post/mo-kuai-hua/">
+        <id>https://liuyong.github.io/post/mo-kuai-hua/</id>
+        <link href="https://liuyong.github.io/post/mo-kuai-hua/">
         </link>
         <updated>2020-05-25T03:03:11.000Z</updated>
         <content type="html"><![CDATA[<h2 id="面试题为什么要使用模块化都有哪几种方式可以实现模块化各有什么特点">面试题：为什么要使用模块化？都有哪几种方式可以实现模块化，各有什么特点？</h2>
@@ -34,8 +34,8 @@ globalVariable.test = function() {}
     </entry>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://http://liuyong.github.io/post/hello-gridea/</id>
-        <link href="https://http://liuyong.github.io/post/hello-gridea/">
+        <id>https://liuyong.github.io/post/hello-gridea/</id>
+        <link href="https://liuyong.github.io/post/hello-gridea/">
         </link>
         <updated>2018-12-11T16:00:00.000Z</updated>
         <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
