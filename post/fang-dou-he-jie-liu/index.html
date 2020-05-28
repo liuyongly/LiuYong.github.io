@@ -5,7 +5,7 @@
     
 <meta charset="utf-8" >
 
-<title>面试 | 温故而知新</title>
+<title>防抖和节流 | 温故而知新</title>
 <meta name="description" content="闲碎时间记录点东西~">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -78,48 +78,72 @@
 
 
       <div class="content-container">
+        <div class="post-detail">
+          
+          <h2 class="post-title">防抖和节流</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2020-05-28</span>
+            
+          </div>
+          <div class="post-content">
+            <h2 id="实现一个节流函数">实现一个节流函数</h2>
+<pre><code>// 思路：在规定时间内只触发一次
+ var throttle = function(fn, delay) {            
+            var timer = null;            
+            return function() {                
+                var context = this;               
+                var args = arguments;
+                if (!timer) {                    
+                    timer = setTimeout(function() {                        
+                        fn.apply(context, args);                        
+                        timer = null;                    
+                    }, delay);                
+                }            
+            }        
+        }
 
-        <div class="current-tag-container">
-          <h2 class="title">
-            <i class="icon icon-pricetags-outline"></i> 面试
-          </h2> 
+function fn () {
+  console.log('节流')
+}
+addEventListener('scroll', throttle(fn, 1000))
+</code></pre>
+<h2 id="实现一个防抖函数">实现一个防抖函数</h2>
+<pre><code>// 思路:在规定时间内未触发第二次，则执行
+function debounce (fn, delay) {
+  // 利用闭包保存定时器
+  let timer = null
+  return function () {
+    let context = this
+    let arg = arguments
+    // 在规定时间内再次触发会先清除定时器后再重设定时器
+    clearTimeout(timer)
+    timer = setTimeout(function () {
+      fn.apply(context, arg)
+    }, delay)
+  }
+}
+
+function fn () {
+  console.log('防抖')
+}
+addEventListener('scroll', debounce(fn, 1000))
+</code></pre>
+
+          </div>
         </div>
 
         
-<section class="post-item">
-    <div class="content">
-      <a href="https://liuyongly.github.io/post/mo-kuai-hua/">
-        <h2 class="post-title">模块化</h2>
-      </a>
-      <div class="post-abstract">
-        
+          <div class="next-post">
+            <a class="purple-link" href="https://liuyongly.github.io/post/shou-xie-promise/">
+              <h3 class="post-title">
+                下一篇：手写Promise
+              </h3>
+            </a>
+          </div>
+          
       </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2020-05-25</span>
-        
-          <span>
-            <i class="icon icon-pricetags-outline"></i>
-            
-              <a href="https://liuyongly.github.io/tag/3uYFnD5g5/">
-                面试
-                
-              </a>
-            
-          </span>
-        
-      </div>
-    </div>
-    
-  </section>
 
-
-<div class="pagination-container">
-  
-  
-</div>
-
-
-      </div>
+      
 
       <div class="site-footer">
   <div class="slogan">闲碎时间记录点东西~</div>

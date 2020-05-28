@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://liuyongly.github.io</id>
     <title>温故而知新</title>
-    <updated>2020-05-28T11:44:59.964Z</updated>
+    <updated>2020-05-28T11:51:21.336Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://liuyongly.github.io"/>
     <link rel="self" href="https://liuyongly.github.io/atom.xml"/>
@@ -10,6 +10,89 @@
     <logo>https://liuyongly.github.io/images/avatar.png</logo>
     <icon>https://liuyongly.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 温故而知新</rights>
+    <entry>
+        <title type="html"><![CDATA[手写call]]></title>
+        <id>https://liuyongly.github.io/post/shou-xie-call/</id>
+        <link href="https://liuyongly.github.io/post/shou-xie-call/">
+        </link>
+        <updated>2020-05-28T11:47:32.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="手写call">手写call</h2>
+<pre><code>Function.prototype.myApply = function(context) {
+  if (typeof this !== 'function') {
+    throw new TypeError('Error')
+  }
+  context = context || window
+  context.fn = this
+  let result
+  // 处理参数和 call 有区别
+  if (arguments[1]) {
+    result = context.fn(...arguments[1])
+  } else {
+    result = context.fn()
+  }
+  delete context.fn
+  return result
+}
+</code></pre>
+<p>以下是对实现的分析：</p>
+<ol>
+<li>首先 <code>context</code> 为可选参数，如果不传的话默认上下文为 <code>window</code></li>
+<li>接下来给 <code>context</code> 创建一个 <code>fn</code> 属性，并将值设置为需要调用的函数</li>
+<li>因为 <code>call</code> 可以传入多个参数作为调用函数的参数，所以需要将参数剥离出来</li>
+<li>然后调用函数并将对象上的函数删除</li>
+</ol>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[防抖和节流]]></title>
+        <id>https://liuyongly.github.io/post/fang-dou-he-jie-liu/</id>
+        <link href="https://liuyongly.github.io/post/fang-dou-he-jie-liu/">
+        </link>
+        <updated>2020-05-28T11:45:55.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="实现一个节流函数">实现一个节流函数</h2>
+<pre><code>// 思路：在规定时间内只触发一次
+ var throttle = function(fn, delay) {            
+            var timer = null;            
+            return function() {                
+                var context = this;               
+                var args = arguments;
+                if (!timer) {                    
+                    timer = setTimeout(function() {                        
+                        fn.apply(context, args);                        
+                        timer = null;                    
+                    }, delay);                
+                }            
+            }        
+        }
+
+function fn () {
+  console.log('节流')
+}
+addEventListener('scroll', throttle(fn, 1000))
+</code></pre>
+<h2 id="实现一个防抖函数">实现一个防抖函数</h2>
+<pre><code>// 思路:在规定时间内未触发第二次，则执行
+function debounce (fn, delay) {
+  // 利用闭包保存定时器
+  let timer = null
+  return function () {
+    let context = this
+    let arg = arguments
+    // 在规定时间内再次触发会先清除定时器后再重设定时器
+    clearTimeout(timer)
+    timer = setTimeout(function () {
+      fn.apply(context, arg)
+    }, delay)
+  }
+}
+
+function fn () {
+  console.log('防抖')
+}
+addEventListener('scroll', debounce(fn, 1000))
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[手写Promise]]></title>
         <id>https://liuyongly.github.io/post/shou-xie-promise/</id>
@@ -125,10 +208,15 @@ const REJECTED = 'rejected'
 </ul>
 <h3 id="立即执行函数">立即执行函数</h3>
 <p>在早期，使用立即执行函数实现模块化是常见的手段，通过函数作用域解决了命名冲突、污染全局作用域的问题</p>
-<pre><code>(function(globalVariable){
-globalVariable.test = function() {}
-// ... 声明各种变量、函数都不会污染全局作用域
-})(globalVariable)
+<pre><code>    (function(globalVariable){
+    globalVariable.test = function() {}
+    // ... 声明各种变量、函数都不会污染全局作用域
+    })(globalVariable)
+    ```
+待完善。。。。。。。。。。。。。。
+
+
+
 </code></pre>
 ]]></content>
     </entry>
