@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://liuyongly.github.io</id>
     <title>温故而知新</title>
-    <updated>2020-05-28T11:44:05.054Z</updated>
+    <updated>2020-05-28T11:44:59.964Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://liuyongly.github.io"/>
     <link rel="self" href="https://liuyongly.github.io/atom.xml"/>
@@ -16,41 +16,43 @@
         <link href="https://liuyongly.github.io/post/shou-xie-promise/">
         </link>
         <updated>2020-05-28T11:27:17.000Z</updated>
-        <content type="html"><![CDATA[<p>创建三个常量表示状态<br>
-(<code>) const PENDING = 'pending' const RESOLVED = 'resolved' const REJECTED = 'rejected' (</code>)<br>
-搭建框架<br>
-(```)<br>
-function MyPromise(fn) {<br>
-const that = this<br>
-that.state = PENDING<br>
-that.value = null<br>
-that.resolvedCallbacks = []<br>
-that.rejectedCallbacks = []<br>
-//  resolve 和 reject 函数<br>
-function resolve(value) {<br>
-if (that.state === PENDING) {<br>
-that.state = RESOLVED<br>
-that.value = value<br>
-that.resolvedCallbacks.map(cb =&gt; cb(that.value))<br>
-}<br>
-}</p>
-<pre><code>function reject(value) {
+        <content type="html"><![CDATA[<p>创建三个常量表示状态</p>
+<pre><code>const PENDING = 'pending'
+const RESOLVED = 'resolved'
+const REJECTED = 'rejected'
+</code></pre>
+<p>搭建框架</p>
+<pre><code>function MyPromise(fn) {
+  const that = this
+  that.state = PENDING
+  that.value = null
+  that.resolvedCallbacks = []
+  that.rejectedCallbacks = []
+  //  resolve 和 reject 函数
+  function resolve(value) {
     if (that.state === PENDING) {
-        that.state = REJECTED
+        that.state = RESOLVED
         that.value = value
-        that.rejectedCallbacks.map(cb =&gt; cb(that.value))
+        that.resolvedCallbacks.map(cb =&gt; cb(that.value))
+    }
+    }
+
+    function reject(value) {
+        if (that.state === PENDING) {
+            that.state = REJECTED
+            that.value = value
+            that.rejectedCallbacks.map(cb =&gt; cb(that.value))
+        }
+    }
+  // 执行 fn 函数
+    try {
+        fn(resolve, reject)
+    } catch (e) {
+        reject(e)
     }
 }
 </code></pre>
-<p>// 执行 fn 函数<br>
-try {<br>
-fn(resolve, reject)<br>
-} catch (e) {<br>
-reject(e)<br>
-}<br>
-}<br>
-(```)<br>
-实现较为复杂的 <code>then</code> 函数</p>
+<p>实现较为复杂的 <code>then</code> 函数</p>
 <pre><code>MyPromise.prototype.then = function(onFulfilled, onRejected) {
   const that = this
   onFulfilled = typeof onFulfilled === 'function' ? onFulfilled : v =&gt; v
