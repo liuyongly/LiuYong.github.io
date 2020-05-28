@@ -1,15 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://liuyongly.github.io</id>
-    <title>刘永的博客</title>
-    <updated>2020-05-28T11:24:42.710Z</updated>
+    <title>温故而知新</title>
+    <updated>2020-05-28T11:36:38.923Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://liuyongly.github.io"/>
     <link rel="self" href="https://liuyongly.github.io/atom.xml"/>
-    <subtitle>温故而知新</subtitle>
+    <subtitle>闲碎时间记录点东西~</subtitle>
     <logo>https://liuyongly.github.io/images/avatar.png</logo>
     <icon>https://liuyongly.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, 刘永的博客</rights>
+    <rights>All rights reserved 2020, 温故而知新</rights>
+    <entry>
+        <title type="html"><![CDATA[手写Promise]]></title>
+        <id>https://liuyongly.github.io/post/shou-xie-promise/</id>
+        <link href="https://liuyongly.github.io/post/shou-xie-promise/">
+        </link>
+        <updated>2020-05-28T11:27:17.000Z</updated>
+        <content type="html"><![CDATA[<p>创建三个常量表示状态<br>
+<code>const PENDING = 'pending' const RESOLVED = 'resolved' const REJECTED = 'rejected'</code></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[模块化]]></title>
         <id>https://liuyongly.github.io/post/mo-kuai-hua/</id>
