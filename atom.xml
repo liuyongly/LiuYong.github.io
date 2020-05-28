@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://liuyongly.github.io</id>
     <title>温故而知新</title>
-    <updated>2020-05-28T11:39:54.385Z</updated>
+    <updated>2020-05-28T11:43:26.130Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://liuyongly.github.io"/>
     <link rel="self" href="https://liuyongly.github.io/atom.xml"/>
@@ -17,9 +17,9 @@
         </link>
         <updated>2020-05-28T11:27:17.000Z</updated>
         <content type="html"><![CDATA[<p>创建三个常量表示状态<br>
-<code>const PENDING = 'pending' const RESOLVED = 'resolved' const REJECTED = 'rejected'</code><br>
+(<code>) const PENDING = 'pending' const RESOLVED = 'resolved' const REJECTED = 'rejected' (</code>)<br>
 搭建框架<br>
-`<br>
+(```)<br>
 function MyPromise(fn) {<br>
 const that = this<br>
 that.state = PENDING<br>
@@ -49,7 +49,7 @@ fn(resolve, reject)<br>
 reject(e)<br>
 }<br>
 }<br>
-`</p>
+(```)</p>
 ]]></content>
     </entry>
     <entry>
