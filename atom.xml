@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://liuyongly.github.io</id>
     <title>温故而知新</title>
-    <updated>2020-05-29T14:31:20.730Z</updated>
+    <updated>2020-05-29T14:33:41.164Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://liuyongly.github.io"/>
     <link rel="self" href="https://liuyongly.github.io/atom.xml"/>
@@ -25,11 +25,11 @@
         <link href="https://liuyongly.github.io/post/git-cao-zuo-xiang-mu-xie-zuo-kai-fa/">
         </link>
         <updated>2020-05-29T13:53:54.000Z</updated>
-        <content type="html"><![CDATA[<p><img src="https://liuyongly.github.io/post-images/1590761667864.png" alt="" loading="lazy"><br>
-###master 主分支<br>
-一般为组长操作<br>
-###Develop 开发分支###<br>
-开发者（小组成员）主要在开发分支上进行开发<br>
+        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://liuyongly.github.io/post-images/1590761667864.png" alt="" loading="lazy"></figure>
+<h3 id="master-主分支">master 主分支</h3>
+<p>一般为组长操作</p>
+<h3 id="develop-开发分支">Develop 开发分支</h3>
+<p>开发者（小组成员）主要在开发分支上进行开发<br>
 每个人在加功能模块的时候，在主分支下新增一个分支进行模块开发，完成后将功能模块合并到主分支上，删除该功能模块</p>
 <p>###Git操作指令：<br>
 删除远程仓库               <code>git remote rm origin</code><br>
