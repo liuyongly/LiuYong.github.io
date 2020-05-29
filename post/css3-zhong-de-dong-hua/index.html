@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://liuyongly.github.io/favicon.ico?v=1590762927110">
+<link rel="shortcut icon" href="https://liuyongly.github.io/favicon.ico?v=1590763694322">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://liuyongly.github.io/styles/main.css">
 
@@ -30,7 +30,7 @@
   <div class="site-header">
     <div class="left">
       <a href="https://liuyongly.github.io">
-        <img class="avatar" src="https://liuyongly.github.io/images/avatar.png?v=1590762927110" alt="" width="32px" height="32px">
+        <img class="avatar" src="https://liuyongly.github.io/images/avatar.png?v=1590763694322" alt="" width="32px" height="32px">
       </a>
       <a href="https://liuyongly.github.io">
         <h1 class="site-title">温故而知新</h1>
@@ -87,6 +87,51 @@
           </div>
           <div class="post-content">
             <h3 id="css动画中的-transition-和-animation">CSS动画中的 <code>transition</code> 和 <code>animation</code></h3>
+<p>CSS中和动画有关的属性有两种：<code>transition</code>和<code>animation</code><br>
+其中<code>animation</code>和关键帧配合使用<code>@keyframes</code></p>
+<h3 id="transition">transition</h3>
+<pre><code>&lt;body&gt;
+    &lt;div class=&quot;box&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
+<pre><code>&lt;style&gt;
+    .box {
+        height: 100px;
+        width: 100px;
+        background-color: lightpink;
+        transition: width 1s 0.5s ease-in-out;
+    }
+
+    .box:hover {
+        width: 200px;
+    }
+&lt;/style&gt;
+</code></pre>
+<p><img src="https://liuyongly.github.io/post-images/1590763441321.gif" alt="" loading="lazy"><br>
+鼠标滑入加宽 滑出恢复，如果把<code>transition</code>写到 <code>：hover</code>伪类上</p>
+<pre><code>.box:hover {
+    width: 200px;
+    transition: width 1s 0.5s ease-in-out;
+}
+</code></pre>
+<p>其实写在hover上也是可以的，但是当我移出元素后，元素宽度立马恢复，而没有过渡！<br>
+原因很简单，你transistion只写在hover上，也就是说只有鼠标移上去的时候，该伪类才生效。</p>
+<h4 id="transition常用属性">transition常用属性</h4>
+<p>transition 属性是一个简写属性，用于设置四个过渡属性：</p>
+<ul>
+<li>ransition-property ：规定设置过渡效果的 CSS 属性的名称【比如width,height,background等等】。</li>
+<li>transition-duration ：规定完成过渡效果需要多少秒或毫秒。</li>
+<li>transition-timing-function ： 规定速度效果的速度曲线。</li>
+<li>transition-delay ： 定义过渡效果何时开始【可理解为延迟】。</li>
+</ul>
+<h4 id="transition特性">transition特性</h4>
+<ul>
+<li>需要具体数值，不能用block,none等</li>
+<li>transition需用事件触发【比如加个hover伪类】，不能在网页加载时自动发生</li>
+<li>一次性，不能重复发生，除非一再触发</li>
+<li>只有两个状态：开始和结束状态</li>
+<li>一条transition规则只能定义一个属性</li>
+</ul>
 
           </div>
         </div>
