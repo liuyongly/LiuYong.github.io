@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://liuyongly.github.io</id>
     <title>温故而知新</title>
-    <updated>2020-05-29T14:55:55.599Z</updated>
+    <updated>2020-05-29T14:57:50.431Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://liuyongly.github.io"/>
     <link rel="self" href="https://liuyongly.github.io/atom.xml"/>
@@ -17,9 +17,10 @@
         </link>
         <updated>2020-05-29T14:29:06.000Z</updated>
         <content type="html"><![CDATA[<h3 id="css动画中的-transition-和-animation">CSS动画中的 <code>transition</code> 和 <code>animation</code></h3>
-<h2 id="css中和动画有关的属性有两种transition和animation其中animation和关键帧配合使用keyframes">CSS中和动画有关的属性有两种：<code>transition</code>和<code>animation</code><br>
-其中<code>animation</code>和关键帧配合使用<code>@keyframes</code></h2>
-<h3 id="transition">transition</h3>
+<p>CSS中和动画有关的属性有两种：<code>transition</code>和<code>animation</code><br>
+其中<code>animation</code>和关键帧配合使用<code>@keyframes</code></p>
+<hr>
+<h2 id="transition">transition</h2>
 <pre><code>&lt;body&gt;
     &lt;div class=&quot;box&quot;&gt;&lt;/div&gt;
 &lt;/body&gt;
@@ -64,7 +65,7 @@
 <li>一条transition规则只能定义一个属性</li>
 </ol>
 <hr>
-<h3 id="animation">animation</h3>
+<h2 id="animation">animation</h2>
 <p>animation就是为了解决以上问题的</p>
 ]]></content>
     </entry>
