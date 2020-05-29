@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://liuyongly.github.io</id>
     <title>温故而知新</title>
-    <updated>2020-05-29T14:26:07.257Z</updated>
+    <updated>2020-05-29T14:31:20.730Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://liuyongly.github.io"/>
     <link rel="self" href="https://liuyongly.github.io/atom.xml"/>
@@ -10,6 +10,15 @@
     <logo>https://liuyongly.github.io/images/avatar.png</logo>
     <icon>https://liuyongly.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 温故而知新</rights>
+    <entry>
+        <title type="html"><![CDATA[CSS3中的动画]]></title>
+        <id>https://liuyongly.github.io/post/css3-zhong-de-dong-hua/</id>
+        <link href="https://liuyongly.github.io/post/css3-zhong-de-dong-hua/">
+        </link>
+        <updated>2020-05-29T14:29:06.000Z</updated>
+        <content type="html"><![CDATA[<p>###CSS动画中的<code>transition</code>和<code>animation</code></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[git操作（项目协作开发）]]></title>
         <id>https://liuyongly.github.io/post/git-cao-zuo-xiang-mu-xie-zuo-kai-fa/</id>
@@ -19,7 +28,7 @@
         <content type="html"><![CDATA[<p><img src="https://liuyongly.github.io/post-images/1590761667864.png" alt="" loading="lazy"><br>
 ###master 主分支<br>
 一般为组长操作<br>
-###Develop 开发分支<br>
+###Develop 开发分支###<br>
 开发者（小组成员）主要在开发分支上进行开发<br>
 每个人在加功能模块的时候，在主分支下新增一个分支进行模块开发，完成后将功能模块合并到主分支上，删除该功能模块</p>
 <p>###Git操作指令：<br>
