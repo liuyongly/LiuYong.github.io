@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://liuyongly.github.io</id>
     <title>温故而知新</title>
-    <updated>2020-05-29T14:33:41.164Z</updated>
+    <updated>2020-05-29T14:34:57.885Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://liuyongly.github.io"/>
     <link rel="self" href="https://liuyongly.github.io/atom.xml"/>
@@ -31,8 +31,8 @@
 <h3 id="develop-开发分支">Develop 开发分支</h3>
 <p>开发者（小组成员）主要在开发分支上进行开发<br>
 每个人在加功能模块的时候，在主分支下新增一个分支进行模块开发，完成后将功能模块合并到主分支上，删除该功能模块</p>
-<p>###Git操作指令：<br>
-删除远程仓库               <code>git remote rm origin</code><br>
+<h3 id="git操作指令">Git操作指令：</h3>
+<p>删除远程仓库               <code>git remote rm origin</code><br>
 查看是否有远程仓库	   <code>git remote</code><br>
 添加远程仓库		     <code>git remote add origin git@github.com:dxh98Live-Joke.git</code><br>
 (然后再次查看远程仓库，确认是否添加成功)<br>
@@ -40,8 +40,8 @@
 创建开发者分支并切换到		<code>git checkout -b dev</code><br>
 提交到开发者分支上			<code>git push origin dev</code></p>
 <p>以上操作只有在没有远程仓库的情况需要操作一次。</p>
-<p>###组员开发者操作流程:<br>
-<strong>组员开发时需要先在开发者分支下创建一个新的分支</strong>(一定要先切换到开发者分支，不然你就是在主分支下创建的新分支)<br>
+<h3 id="组员开发者操作流程">组员开发者操作流程:</h3>
+<p><strong>组员开发时需要先在开发者分支下创建一个新的分支</strong>(一定要先切换到开发者分支，不然你就是在主分支下创建的新分支)<br>
 git branch 分支名字 创建新分支<br>
 先切换到开发者分支		<code>git checkout dev</code><br>
 <strong>创建新的开发分支</strong>并切换	<code>git checkout -b createcomponents</code> (后面的分支名字自己起)<br>
@@ -66,8 +66,8 @@ and the repository exists.<br>
 删除分支				<code>git branch -d 分支名</code><br>
 <strong>千万不要把主分支和开发分支删了！！！！！！谨慎操作！！！！！！</strong></p>
 <p><strong>谨记一定要在dev开发分支下新创建一个分支用于开发，确认功能做好之后再合并到dev分支上，并做好操作日志更新，以免出现问题找不到又无法回退版本。得了，重写吧。</strong></p>
-<p>###Feture_n 修改bug分支：<br>
-等最后修改bug的时候再进行操作。</p>
+<h3 id="feture_n-修改bug分支">Feture_n 修改bug分支：</h3>
+<p>等最后修改bug的时候再进行操作。</p>
 ]]></content>
     </entry>
     <entry>
