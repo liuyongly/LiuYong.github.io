@@ -1,0 +1,186 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>git操作（项目协作开发） | 温故而知新</title>
+<meta name="description" content="闲碎时间记录点东西~">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://liuyongly.github.io/favicon.ico?v=1590762361900">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://liuyongly.github.io/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://liuyongly.github.io">
+        <img class="avatar" src="https://liuyongly.github.io/images/avatar.png?v=1590762361900" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://liuyongly.github.io">
+        <h1 class="site-title">温故而知新</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+          <h2 class="post-title">git操作（项目协作开发）</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2020-05-29</span>
+            
+          </div>
+          <div class="post-content">
+            <p><img src="https://liuyongly.github.io/post-images/1590761667864.png" alt="" loading="lazy"><br>
+###master 主分支<br>
+一般为组长操作<br>
+###Develop 开发分支<br>
+开发者（小组成员）主要在开发分支上进行开发<br>
+每个人在加功能模块的时候，在主分支下新增一个分支进行模块开发，完成后将功能模块合并到主分支上，删除该功能模块</p>
+<p>###Git操作指令：<br>
+删除远程仓库               <code>git remote rm origin</code><br>
+查看是否有远程仓库	   <code>git remote</code><br>
+添加远程仓库		     <code>git remote add origin git@github.com:dxh98Live-Joke.git</code><br>
+(然后再次查看远程仓库，确认是否添加成功)<br>
+提交到远程仓库的主分支上	<code>git push origin master</code><br>
+创建开发者分支并切换到		<code>git checkout -b dev</code><br>
+提交到开发者分支上			<code>git push origin dev</code></p>
+<p>以上操作只有在没有远程仓库的情况需要操作一次。</p>
+<p>###组员开发者操作流程:<br>
+<strong>组员开发时需要先在开发者分支下创建一个新的分支</strong>(一定要先切换到开发者分支，不然你就是在主分支下创建的新分支)<br>
+git branch 分支名字 创建新分支<br>
+先切换到开发者分支		<code>git checkout dev</code><br>
+<strong>创建新的开发分支</strong>并切换	<code>git checkout -b createcomponents</code> (后面的分支名字自己起)<br>
+然后写项目内容，写完了功能确认没有bug之后<br>
+查看被修改的文件		<code>git status</code><br>
+提交一下文件		<code>git add .</code><br>
+保存到本地仓库一个版本	<code>git commit -m</code> “更新日志”<br>
+切换到开发分支			<code>git checkout dev</code><br>
+合并分支				<code>git merge 分支名 --no-ff</code>		<br>
+(后面的—no-ff是把合并记录添加到github当中，方便查看合并分支的历史记录)<br>
+合并分支过程中会跳到一个页面让你输入合并记录的注释，按下shift+！然后按w，你会发现最下方已经可以输入东西了，把输入过的东西删掉，输入q然后回车，看不懂就百度。<br>
+然后可以查看一下操作记录		<code>git log</code><br>
+推送到远程代码仓库的dev分支	<code>git push origin dev</code></p>
+<p>如果出现冲突，先pull一下再push，<br>
+如果push一直提示：fatal: Could not read from remote repository.<br>
+Please make sure you have the correct access rights<br>
+and the repository exists.<br>
+则多提交几次就行了，github是连接不上。</p>
+<p>提交后去github上查看代码，看看是否有你新增或修改的部分，再看看commit记录，是否有你的提交记录，有的话就生成了版本号，能回到你的这个版本。</p>
+<p>然后查看当前分支		<code>git branch</code><br>
+你会发现你在dev下创建的新分支还在，<br>
+删除分支				<code>git branch -d 分支名</code><br>
+<strong>千万不要把主分支和开发分支删了！！！！！！谨慎操作！！！！！！</strong></p>
+<p><strong>谨记一定要在dev开发分支下新创建一个分支用于开发，确认功能做好之后再合并到dev分支上，并做好操作日志更新，以免出现问题找不到又无法回退版本。得了，重写吧。</strong></p>
+<p>###Feture_n 修改bug分支：<br>
+等最后修改bug的时候再进行操作。</p>
+
+          </div>
+        </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://liuyongly.github.io/post/shou-xie-call/">
+              <h3 class="post-title">
+                下一篇：手写call
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+
+      <div class="site-footer">
+  <div class="slogan">闲碎时间记录点东西~</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://liuyongly.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>
