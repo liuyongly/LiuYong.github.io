@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://liuyongly.github.io</id>
     <title>温故而知新</title>
-    <updated>2020-05-29T14:34:57.885Z</updated>
+    <updated>2020-05-29T14:35:29.718Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://liuyongly.github.io"/>
     <link rel="self" href="https://liuyongly.github.io/atom.xml"/>
@@ -16,7 +16,7 @@
         <link href="https://liuyongly.github.io/post/css3-zhong-de-dong-hua/">
         </link>
         <updated>2020-05-29T14:29:06.000Z</updated>
-        <content type="html"><![CDATA[<p>###CSS动画中的<code>transition</code>和<code>animation</code></p>
+        <content type="html"><![CDATA[<h3 id="css动画中的-transition-和-animation">CSS动画中的 <code>transition</code> 和 <code>animation</code></h3>
 ]]></content>
     </entry>
     <entry>
